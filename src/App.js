@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "./components/kepler/keplerIframe";
+import WarmindoIframe from "./components/kepler/keplerIframe";
+import MarketIframe from "./components/market-iframe/marketIframe";
+import Sidebar from "./components/sidebar/sidebar";
+import { Routes, Route, Link } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Sidebar />
+      <Routes>
+        <Route path="/" element={<WarmindoIframe />} />
+        <Route path="/market" element={<MarketIframe />} />
+      </Routes>
     </div>
   );
 }
