@@ -4,7 +4,7 @@ import Iframe from "react-iframe";
 const MarketIframe = () => {
   return (
     <Iframe
-      url="/market.html"
+      url="/market2.html"
       width="100%"
       height="100%"
       id=""
