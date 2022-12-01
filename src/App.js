@@ -1,20 +1,24 @@
-import "./App.css";
-import "./components/kepler/keplerIframe";
-import WarmindoIframe from "./components/kepler/keplerIframe";
-import MarketIframe from "./components/market-iframe/marketIframe";
-import Sidebar from "./components/sidebar/sidebar";
+import "./App.scss";
+import Retail from "./components/pages/retail";
+import MarketIframe from "./components/pages/market-iframe/marketIframe";
+import Sidebar from "./components/sidebar/Sidebar.jsx";
 import { Routes, Route, Link } from "react-router-dom";
+import AppLayout from "./components/layout/AppLayout";
+import React, { Component } from "react";
 
 const App = () => {
   return (
     <div className="App">
       <Sidebar />
       <Routes>
-        <Route path="/" element={<WarmindoIframe />} />
-        <Route path="/market" element={<MarketIframe />} />
+        <Route path="/" element={<AppLayout />}>
+          <Route index element={<Retail />} />
+          <Route path="/education" element={<MarketIframe />} />
+        </Route>
+        {/* <Route path="/" element={<Retail />} /> */}
       </Routes>
     </div>
   );
-}
+};
 
 export default App;
