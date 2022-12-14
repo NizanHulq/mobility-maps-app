@@ -1,6 +1,7 @@
 import React from "react";
 import "./sidebar.scss";
 import StorefrontIcon from "@material-ui/icons/Storefront";
+import SchoolIcon from "@material-ui/icons/School";
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 const sidebarNavItems = [
@@ -12,7 +13,7 @@ const sidebarNavItems = [
   },
   {
     display: "Getting Education",
-    icon: <i className="bx bx-star"></i>,
+    icon: <SchoolIcon />,
     to: "/education",
     section: "education",
   },
